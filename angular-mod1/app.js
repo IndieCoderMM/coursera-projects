@@ -14,7 +14,7 @@ function LunchCheckController ($scope) {
 	$scope.checkItems = function () {
 		var lunchItems = $scope.lunchString.split(',');
 		lunchItems = removeSpaces(lunchItems);
-		$scope.items = lunchItems.length
+		$scope.items = lunchItems.length;
 
 		if ($scope.items == 0 ) {
 			$scope.message = "Please enter data first!";
