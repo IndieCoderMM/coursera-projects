@@ -20,10 +20,10 @@ function LunchCheckController ($scope) {
 			$scope.message = "Please enter data first!";
 		}
 		else if ($scope.items < 4) {
-			$scope.message = "Enjoy!";
+			$scope.message = "That's a great menu. Enjoy!";
 		}
 		else {
-			$scope.message = "Too Much!";
+			$scope.message = "Too Much Food! Not OK for health.";
 		}
 	};
 

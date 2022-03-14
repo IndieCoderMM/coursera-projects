@@ -3,6 +3,7 @@
   <head>
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
+    <!-- <script type="text/javascript" src='JavaScriptSpellCheck/include.js'></script> -->
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles/main.css">
     <title>Lunch Checker</title>
@@ -17,24 +18,27 @@
          <input id="lunch-menu" type="text"
          placeholder="your lunch menu separated by commas(,)"
          class="form-control" ng-model="lunchString"
-         ng-class="items>0? 'green-border': message===''? ' ':'red-border'">
+         ng-class="items>3? 'red-border': items>0? 'green-border' : message===''? ' ':'red-border'">
      </div>
 
      <div class="form-group">
-         <button class="chk-btn" ng-click="checkItems();">Check If Too Much</button>
+         <button class="chk-btn" ng-click="checkItems();">Check My Lunch</button>
+        <!--  <input type="button" value="Test" onclick='alert($Spelling.BinSpellCheck("word"))'/> -->
      </div>
 
-     <div class="form-group message" ng-class="items>0? 'green-text':'red-text'">
+     <div class="form-group message" ng-class="items>3? 'red-text': items>0? 'green-text' : message===''? ' ':'red-text'">
        <p>{{message}}</p>
      </div>
 
     <div class="footer">
-
+      <div class="info-1">
          <p>Assignment Project from </p>
          <img class="icon" src="icons/coursera.png" alt="coursera_icon">
-         <p>|   Created with </p>
+      </div>
+      <div class="info-2">
+         <p>Created with </p>
          <img class="icon" src="icons/angular.png" alt="angular_icon">
-
+      </div>
     </div>
 
    </div>
