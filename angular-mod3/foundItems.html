@@ -1,0 +1,9 @@
+<ul class="w3-ul w3-hoverable" ng-if="menu.items.length" style="width: 80%; margin:auto;">
+	<h2 class="w3-panel w3-center w3-orange"><b> {{menu.title}} </b></h2>
+	<li class="w3-hover-lime w3-display-container w3-dropdown-hover" ng-repeat="item in menu.items" ng-hide="item.hidden" style="width:100%">
+	<h3 class="w3-cursive"><b>{{item.name}}</b></h3>
+	<p class="w3-dropdown-content w3-panel w3-padding w3-round w3-text-indigo" style="text-transform: capitalize">{{item.description}}</p>
+	<button class="w3-btn w3-text-red w3-display-topright w3-xlarge w3-hover-red" ng-click="menu.hideItem($index);">&times;</button>
+	</li>
+</ul>
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MoviesDBApp">
+  <head>
+    <title>Movies Database</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/w3.css">
+    <!-- <link rel="stylesheet" href="styles/styles.css"> -->
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>
+      body {
+        background-image: url("Netflix-Background.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top left;
+      }
+    </style>
+  </head>
+<body>
+   <div class="w3-container" ng-controller="SearchEngineController as ctrl">
+    <div class="w3-white w3-padding w3-center w3-border w3-border-orange w3-border-large w3-round w3-section" style="width:50%;margin:auto;">
+      <input type="text" placeholder="Search from over 20,000 movies" class="w3-input w3-section" ng-model="ctrl.searchTerm">
+      <button class="w3-btn w3-white w3-border w3-border-green w3-hover-green" ng-click="ctrl.getMovies();">Narrow It Down For Me!</button>
+    </div>
+    
+    <!-- found-items should be implemented as a component -->
+    <found-items></found-items>
+    
+    <div class="w3-card w3-pale-yellow w3-hoverable" ng-if="ctrl.movies.length" style="width: 70%; height: 350px; margin:auto; overflow: auto">
+      <h2 class="w3-panel w3-center w3-orange w3-text-white">{{ctrl.header}}</h2>
+      <div class="w3-display-container w3-hover-white w3-leftbar w3-border-pale-yellow w3-hover-border-orange" ng-repeat="movie in ctrl.movies" style="width:100%">
+        <p>
+          <span class="w3-cursive w3-xlarge"><b>{{movie.title}}</b></span>
+          <span class="w3-tag w3-margin-left w3-orange">{{movie.year}}</span>
+          <span class="w3-tag w3-margin-left w3-green">{{movie.genre}}</span></p>
+        <p>
+      
+        <button class="w3-btn w3-text-red w3-display-topright w3-large w3-hover-red" ng-click="ctrl.hideItem($index)">&times;</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
